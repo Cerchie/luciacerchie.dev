@@ -1,8 +1,8 @@
 :root {
   --background-body: #fff;
-  --text-main: #36393b;
-  --text-secondary: #6b6f72;
-  --primary-color: #548e9b;
+  --text-main: #fff;
+  --text-secondary: #a9d3f3;
+  --primary-color: #dc93da;
   --font-family-serif: Merriweather, serif;
   --font-family-sans: 'Fira Sans', sans-serif;
 }
@@ -33,11 +33,11 @@ html {
 
 body {
   margin: 0;
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-sans);
   font-size: 16px;
+  font-weight: 100;
   line-height: 1.6;
-  background-color: var(--background-body);
-  color: var(--text-main);
+  background: linear-gradient(90deg, rgba(235,237,255,1) 0%, rgba(53,119,61,0.352000175070028) 50%);
 }
 
 h1,
@@ -47,13 +47,14 @@ h4,
 h5,
 h6 {
   font-family: var(--font-family-sans);
-  font-weight: 700;
+  font-weight: 100;
   line-height: 1.2;
   margin: 0 0 0.5em 0;
+  color:rgb(255, 255, 255);
 }
 
 h1 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-sans);
   font-size: 4em;
   margin: 0 0 1em 0;
 }
@@ -85,6 +86,8 @@ ol {
   font-size: 1.3rem;
   line-height: 1.75em;
   margin: 1.2em 0;
+  color:rgb(255, 255, 255);
+  font-weight: 100;
 }
 
 ol,
@@ -101,6 +104,7 @@ li {
 li p {
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
+
 }
 
 a {
@@ -213,6 +217,7 @@ td {
 .content h1 {
   font-size: 3em;
   margin: 1em 0;
+  font-weight: 100;
 }
 
 .theme-toggle {
@@ -264,6 +269,7 @@ input[name='theme-toggle'] {
 
   .content h1 {
     font-size: 2.4em;
+    font-weight: 100;
   }
 }
 
@@ -277,5 +283,7 @@ input[name='theme-toggle'] {
   ol {
     font-size: 1.2rem;
     margin: 1em 0;
+    color:rgb(255, 255, 255);
+    font-weight: 100;
   }
 }
