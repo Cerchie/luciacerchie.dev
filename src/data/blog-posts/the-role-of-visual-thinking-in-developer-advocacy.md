@@ -1,6 +1,6 @@
 ---
 title: The Role of Visual Thinking In Developer Advocacy
-date: '2022-08-03'
+publishDate: '2022-08-03'
 description: Visual thinking is underutilied in the world of devrel
 ---
 

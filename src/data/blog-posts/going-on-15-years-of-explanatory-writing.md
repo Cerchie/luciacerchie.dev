@@ -1,6 +1,6 @@
 ---
 title: Going on 15 Years of Explanatory Writing
-date: '2024-02-28'
+publishDate: '2024-02-28'
 description: What have I learned after blogging so much?
 ---
 

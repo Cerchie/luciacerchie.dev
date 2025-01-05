@@ -1,6 +1,6 @@
 ---
 title: JavaScript Frameworks and How To Pick One - A Twitter Space Summary
-date: '2022-08-09'
+publishDate: '2022-08-09'
 description: Summary of a Twitter space from back in the day.
 ---
 

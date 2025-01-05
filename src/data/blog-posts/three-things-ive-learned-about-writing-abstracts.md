@@ -1,6 +1,6 @@
 ---
 title: Three Things I've Learned About Writing Abstracts
-date: '2022-10-15'
+publishDate: '2022-10-15'
 description: Read this to level up your own abstracts!
 ---
 

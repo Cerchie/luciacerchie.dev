@@ -1,6 +1,6 @@
 ---
 title: A Framework For Knowing What You Don't Know
-date: '2022-12-16'
+publishDate: '2022-12-16'
 description: How do you learn something new?
 ---
 

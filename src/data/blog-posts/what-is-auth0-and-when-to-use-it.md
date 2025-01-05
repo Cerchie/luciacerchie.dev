@@ -1,6 +1,6 @@
 ---
 title: What Is auth0 and When To Use It
-date: '2022-08-31'
+publishDate: '2022-08-31'
 description: auth0 and why everyone uses it
 ---
 

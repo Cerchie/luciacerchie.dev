@@ -1,6 +1,6 @@
 ---
 title: Writing A Clear Code Example
-date: '2022-08-08'
+publishDate: '2022-08-08'
 description: Your coworkers and readers will thank you
 ---
 
