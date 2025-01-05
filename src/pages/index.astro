@@ -1,10 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-import { Image } from 'astro:assets';
-
-const imageSrc = '../assets/robot.png';
-
 const title = 'My Astro Blog';
 const description = 'The perfect starter for your perfect blog.';
 const permalink = Astro.site.href;
@@ -47,12 +43,15 @@ alt="Robot image"
     font-size: 4em;
     font-weight: 100;
     margin-bottom: 0.5em;
-    color:rgb(255, 255, 255);
+    color:#2c5131;
+    font-family: var(--font-family-serif);
   }
 
   .home-copy p {
     font-size: 2em;
-    color:rgb(255, 255, 255);
+    color:#2c5131;
+    margin-left: .5em;
+    margin-top: -.5em;
   }
 
   .hero-image-container {

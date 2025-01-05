@@ -1,17 +1,10 @@
 :root {
   --background-body: #fff;
-  --text-main: #fff;
-  --text-secondary: #a9d3f3;
-  --primary-color: #dc93da;
-  --font-family-serif: Merriweather, serif;
-  --font-family-sans: 'Fira Sans', sans-serif;
-}
-
-:root.theme-dark {
-  --background-body: #202122;
-  --text-main: #fff;
-  --text-secondary: #ccc;
-  --primary-color: #548e9b;
+  --text-main: #2c5131;
+  --text-secondary: #5a8861;
+  --primary-color: #4a9159;
+  --font-family-serif: "Crimson Text", serif;
+  --font-family-sans: Nunito, sans-serif;
 }
 
 html {
@@ -37,7 +30,7 @@ body {
   font-size: 16px;
   font-weight: 100;
   line-height: 1.6;
-  background: linear-gradient(90deg, rgba(235,237,255,1) 0%, rgba(53,119,61,0.352000175070028) 50%);
+  background: linear-gradient(rgba(235,237,255,1) 0%, );
 }
 
 h1,
@@ -46,15 +39,15 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-sans);
+  font-family: var(--font-family-serif);
   font-weight: 100;
   line-height: 1.2;
   margin: 0 0 0.5em 0;
-  color:rgb(255, 255, 255);
+  color:#2c5131;;
 }
 
 h1 {
-  font-family: var(--font-family-sans);
+  font-family: var(--font-family-serif);
   font-size: 4em;
   margin: 0 0 1em 0;
 }
@@ -85,9 +78,10 @@ ul,
 ol {
   font-size: 1.3rem;
   line-height: 1.75em;
-  margin: 1.2em 0;
-  color:rgb(255, 255, 255);
+  margin: 0;
+  color:#2c5131;
   font-weight: 100;
+  width: 100%;
 }
 
 ol,
@@ -283,7 +277,7 @@ input[name='theme-toggle'] {
   ol {
     font-size: 1.2rem;
     margin: 1em 0;
-    color:rgb(255, 255, 255);
+    color:#2c5131;;
     font-weight: 100;
   }
 }
