@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = 'Talks & Publications';
 const description = 'Talks and publications.';
-const permalink = `${Astro.site.href}talks-and-publications`;
+const permalink = Astro.site ? `${Astro.site.href}talks-and-publications` : '';
 
 ---
 
