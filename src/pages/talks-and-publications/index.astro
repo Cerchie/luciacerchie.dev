@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Talks & Publications';
+const description = 'Talks and publications.';
+const permalink = `${Astro.site.href}talks-and-publications`;
+
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="blog">
+  <div class="container">
+    <h1>Talks & Publications</h1>
+    <h2>Talks</h2>
+        <p>
+          <a href="https://www.youtube.com/watch?v=LwzMLILuDXs">Navigating Large Repositories</a> - Upstream 2023
+              <br />
+        </p>
+        <p>
+          <a href="https://www.youtube.com/live/L_Q-U3HzHBY?si=os5s4i0fOkthgc6p">Turning Our Perspective Upside Down</a> - THAT Wisconson Keynote 2023
+              <br />
+        </p>
+        <p>
+          <a href="https://youtu.be/Gg2v5fOeiZ8?si=FsnljUFIo2RcFS7u">Getting Started With Apache Kafka® For JS Devs</a> - Certified Fresh Events 2023
+              <br />
+        </p>
+        <p>
+          <a href="https://www.youtube.com/live/klvt1xUArmU?si=hXi-lL48FpuyQ5SF&t=10952"> Let's Get Started With Apache Kafka® for Python Developers</a> - WeAreDevelopers Live 2023
+              <br />
+        </p>
+        <p>
+          <a href="https://youtu.be/F_a9EGbsyKQ?si=-Yfp0BmDI19cnbtN">Data is Fun-damental: The Basics of Apache Kafka®</a> - Virtual Coffee Lunch'n'Learn 2022
+              <br />
+        </p>
+        <p>
+          <a href="https://youtu.be/mUt0vojFyXY?si=DRtOjHXCNZ925iBY">Getting Started With GraphQL</a> - Virtual Coffee Lunch'n'Learn 2021
+              <br />
+        </p>
+        <p>
+          <a href="https://www.confluent.io/events/kafka-summit-london-2023/a-hitchhikers-guide-to-apache-kafka-r/">A Hitchhiker's Guide to Apache Kafka®</a> - Kafka Summit London 2023
+              <br />
+        </p>
+    <h2>Publications</h2>
+    <p>
+        <a href="https://www.confluent.io/blog/author/lucia-cerchie/">Data streaming blog posts</a> - Confluent
+            <br />
+      </p>
+      <p>
+        <a href="https://stepzen.com/blog/using-vercels-middleware-and-graphql">Living on the Edge: Using Vercel’s Middleware and
+            GraphQL</a> - StepZen
+            <br />
+      </p>
+      <p>
+        <a href="https://dev.to/cerchie">self-published DEV.to posts</a> - DEV.to
+            <br />
+      </p>
+
+
+  </div>
+</BaseLayout>
+
+<style>
+  h2,
+  .post-item-footer {
+    font-family: var(--font-family-sans);
+    font-weight: 100;
+    color:#2c5131;;
+  }
+
+  .post-item-date {
+    color: var(--text-secondary);
+    text-align: left;
+    text-transform: uppercase;
+    margin-right: 16px;
+  }
+
+  hr {
+    margin: 60px auto;
+  }
+
+</style>
