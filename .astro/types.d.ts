@@ -190,56 +190,56 @@ declare module 'astro:content' {
   slug: "a-framework-for-knowing-what-you-dont-knowmd";
   body: string;
   collection: "blog-posts";
-  data: any
+  data: InferEntrySchema<"blog-posts">
 } & { render(): Render[".md"] };
 "going-on-15-years-of-explanatory-writing.md": {
 	id: "going-on-15-years-of-explanatory-writing.md";
   slug: "going-on-15-years-of-explanatory-writing";
   body: string;
   collection: "blog-posts";
-  data: any
+  data: InferEntrySchema<"blog-posts">
 } & { render(): Render[".md"] };
 "javascript-frameworks-and-how-to-pick-one.md": {
 	id: "javascript-frameworks-and-how-to-pick-one.md";
   slug: "javascript-frameworks-and-how-to-pick-one";
   body: string;
   collection: "blog-posts";
-  data: any
+  data: InferEntrySchema<"blog-posts">
 } & { render(): Render[".md"] };
 "looking-back-on-a-year-of-kafka.md": {
 	id: "looking-back-on-a-year-of-kafka.md";
   slug: "looking-back-on-a-year-of-kafka";
   body: string;
   collection: "blog-posts";
-  data: any
+  data: InferEntrySchema<"blog-posts">
 } & { render(): Render[".md"] };
 "the-role-of-visual-thinking-in-developer-advocacy.md": {
 	id: "the-role-of-visual-thinking-in-developer-advocacy.md";
   slug: "the-role-of-visual-thinking-in-developer-advocacy";
   body: string;
   collection: "blog-posts";
-  data: any
+  data: InferEntrySchema<"blog-posts">
 } & { render(): Render[".md"] };
 "three-things-ive-learned-about-writing-abstracts.md": {
 	id: "three-things-ive-learned-about-writing-abstracts.md";
   slug: "three-things-ive-learned-about-writing-abstracts";
   body: string;
   collection: "blog-posts";
-  data: any
+  data: InferEntrySchema<"blog-posts">
 } & { render(): Render[".md"] };
 "what-is-auth0-and-when-to-use-it.md": {
 	id: "what-is-auth0-and-when-to-use-it.md";
   slug: "what-is-auth0-and-when-to-use-it";
   body: string;
   collection: "blog-posts";
-  data: any
+  data: InferEntrySchema<"blog-posts">
 } & { render(): Render[".md"] };
 "writing-a-clear-code-example.md": {
 	id: "writing-a-clear-code-example.md";
   slug: "writing-a-clear-code-example";
   body: string;
   collection: "blog-posts";
-  data: any
+  data: InferEntrySchema<"blog-posts">
 } & { render(): Render[".md"] };
 };
 
@@ -251,5 +251,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	type ContentConfig = never;
+	type ContentConfig = typeof import("../src/content/config");
 }

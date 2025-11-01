@@ -2,18 +2,20 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Bio from '../../components/Bio.astro';
 import getPostData from '../../utils/getPostData';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob('../../data/blog-posts/*.md');
-  return posts.map(p => ({
-    params: { slug: p.file.split('/').pop().split('.').shift() },
-    props: { post: p },
+  const posts = await getCollection('blog-posts');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
   }));
 }
 
-const { Content, frontmatter } = Astro.props.post;
-const { title, description, publishDate } = frontmatter;
-const { slug, readingTime } = getPostData(Astro.props.post);
+const { post } = Astro.props;
+const { Content } = await post.render();
+const { title, description, publishDate } = post.data;
+const { slug, readingTime } = getPostData(post);
 const permalink = `${Astro.site.href}blog/${slug}`;
 ---
 

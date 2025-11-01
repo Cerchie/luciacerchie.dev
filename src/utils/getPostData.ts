@@ -1,14 +1,9 @@
-import readingTime from 'reading-time'
+import type { CollectionEntry } from 'astro:content';
+import getReadingTime from 'reading-time';
 
-type Post = {
-  title: string
-  file: string
-  rawContent: () => string
-}
-
-export default function getPostData(post: Post) {
+export default function getPostData(post: CollectionEntry<'blog-posts'>) {
   return {
-    slug: post.file.split('/').pop().split('.').shift(),
-    readingTime: readingTime(post.rawContent()).text,
-  }
+    slug: post.slug,
+    readingTime: getReadingTime(post.body).text
+  };
 }
