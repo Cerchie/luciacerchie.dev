@@ -213,13 +213,6 @@ declare module 'astro:content' {
   collection: "blog-posts";
   data: InferEntrySchema<"blog-posts">
 } & { render(): Render[".md"] };
-"test-post.mdx": {
-	id: "test-post.mdx";
-  slug: "test-post";
-  body: string;
-  collection: "blog-posts";
-  data: InferEntrySchema<"blog-posts">
-} & { render(): Render[".mdx"] };
 "the-role-of-visual-thinking-in-developer-advocacy.md": {
 	id: "the-role-of-visual-thinking-in-developer-advocacy.md";
   slug: "the-role-of-visual-thinking-in-developer-advocacy";
@@ -234,6 +227,13 @@ declare module 'astro:content' {
   collection: "blog-posts";
   data: InferEntrySchema<"blog-posts">
 } & { render(): Render[".md"] };
+"what-are-rss-feeds.mdx": {
+	id: "what-are-rss-feeds.mdx";
+  slug: "what-are-rss-feeds";
+  body: string;
+  collection: "blog-posts";
+  data: InferEntrySchema<"blog-posts">
+} & { render(): Render[".mdx"] };
 "what-is-auth0-and-when-to-use-it.md": {
 	id: "what-is-auth0-and-when-to-use-it.md";
   slug: "what-is-auth0-and-when-to-use-it";

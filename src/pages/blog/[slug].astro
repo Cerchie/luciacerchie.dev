@@ -42,6 +42,7 @@ const permalink = `${Astro.site.href}blog/${slug}`;
   header h1 {
     margin-bottom: 0.7em;
     color:#2c5131;;
+    font-size: 6rem;
   }
 
   header p {
@@ -61,6 +62,45 @@ const permalink = `${Astro.site.href}blog/${slug}`;
   .content {
     width: 100%;
     margin: 0 auto;
+    font-size: 2.25rem;
+    line-height: 1.8;
+  }
+
+  :global(.content h2) {
+    font-size: 3.5rem;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  :global(.content h3) {
+    font-size: 2.75rem;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+  }
+
+  :global(.content p) {
+    font-size: 2.25rem;
+    margin-bottom: 1.5em;
+  }
+
+  :global(.content li) {
+    font-size: 2.25rem;
+  }
+
+  :global(.content a) {
+    font-size: 2.25rem;
+  }
+
+  :global(.content blockquote) {
+    font-size: 2.25rem;
+  }
+
+  :global(.content code) {
+    font-size: 2rem;
+  }
+
+  :global(.content pre) {
+    font-size: 1.5rem;
   }
 
   .container {

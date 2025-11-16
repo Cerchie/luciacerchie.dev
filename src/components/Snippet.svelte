@@ -76,16 +76,17 @@
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Archivo:wght@600;700&display=swap');
 
   :root {
-    --snippet-bg: #0f172a;
-    --snippet-border: #1e293b;
-    --header-bg: #1e293b;
-    --line-highlight: #1e3a5f;
-    --line-number-color: #475569;
-    --text-color: #e2e8f0;
-    --text-dim: #94a3b8;
-    --copy-btn-bg: #334155;
-    --copy-btn-hover: #475569;
-    --shadow: rgba(15, 23, 42, 0.5);
+    --snippet-bg: #0a0e14;
+    --snippet-border: #1a4d3e;
+    --header-bg: #0d3028;
+    --line-highlight: #1a5a47;
+    --line-number-color: #2d7a68;
+    --text-color: #e0f2f1;
+    --text-dim: #80cbc4;
+    --copy-btn-bg: #1a5a47;
+    --copy-btn-hover: #2d7a68;
+    --shadow: rgba(10, 14, 20, 0.6);
+    --accent-green: #26a69a;
   }
 
   .snippet-container {
@@ -178,14 +179,14 @@
 
   .code-pre {
     margin: 0;
-    padding: 1.25rem 0;
+    padding: 1rem 0;
   }
 
   .code-block {
     display: block;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.875rem;
-    line-height: 1.7;
+    font-size: 1.375rem;
+    line-height: 1.25;
     color: var(--text-color);
   }
 

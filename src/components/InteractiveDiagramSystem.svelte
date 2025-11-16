@@ -218,11 +218,12 @@
     <div class="diagram-header">
       <h3 class="diagram-title">{title}</h3>
       {#if steps.length > 0}
-        <div class="controls">
+        <div class="controls" role="group" aria-label="Diagram controls">
           <button 
             class="control-btn" 
             on:click={resetSteps}
-            title="Reset"
+            title="Reset to first step"
+            aria-label="Reset diagram to starting state"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
@@ -307,7 +308,7 @@
             {#if conn.label}
               <text
                 x={(nodeData.find(n => n.id === conn.from)?.x + nodeData.find(n => n.id === conn.to)?.x) / 2}
-                y={(nodeData.find(n => n.id === conn.from)?.y + nodeData.find(n => n.id === conn.to)?.y) / 2 - 10}
+                y={(nodeData.find(n => n.id === conn.from)?.y + nodeData.find(n => n.id === conn.to)?.y) / 2 - 45}
                 class="connection-label"
                 text-anchor="middle"
               >
@@ -325,8 +326,11 @@
             class="node"
             class:highlighted={node.highlighted}
             class:draggable
+            role="button"
+            tabindex="0"
             on:mousedown={(e) => handleMouseDown(node, e)}
-            style="cursor: {draggable ? 'move' : 'default'}"
+            aria-label={`${node.label} node`}
+            style="cursor: {draggable ? 'grab' : 'default'}"
           >
             {#if node.shape === 'circle'}
               <circle
@@ -345,7 +349,7 @@
             {/if}
             <text
               x={node.x}
-              y={node.y}
+              y={node.y + node.size / 2 + 28}
               class="node-label"
               text-anchor="middle"
               dominant-baseline="middle"
@@ -366,127 +370,149 @@
 </div>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Fira+Code:wght@400;500;600&display=swap');
 
   :root {
-    --diagram-bg: #fafafa;
-    --diagram-border: #e5e5e5;
-    --header-bg: #ffffff;
-    --text-primary: #171717;
-    --text-secondary: #737373;
-    --accent: #14b8a6;
-    --accent-light: #5eead4;
-    --accent-dark: #0f766e;
-    --shadow-color: rgba(20, 184, 166, 0.15);
+    --diagram-bg: linear-gradient(135deg, #0a0e14 0%, #0d1a18 100%);
+    --diagram-border: #1a4d3e;
+    --header-bg: linear-gradient(135deg, #0d1a18 0%, #0f2420 100%);
+    --text-primary: #e0f2f1;
+    --text-secondary: #80cbc4;
+    --accent: #26a69a;
+    --accent-light: #4db8b0;
+    --accent-dark: #1b7a6f;
+    --accent-glow: rgba(38, 166, 154, 0.25);
+    --shadow: rgba(0, 0, 0, 0.4);
   }
 
   .diagram-wrapper {
     width: 100%;
     max-width: var(--diagram-width);
     margin: 2rem auto;
-    font-family: 'Darker Grotesque', sans-serif;
+    font-family: 'Crimson Text', serif;
   }
 
   .diagram-container {
     background: var(--diagram-bg);
-    border: 2px solid var(--diagram-border);
-    border-radius: 16px;
+    border: 1.5px solid var(--diagram-border);
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: 
-      0 4px 20px rgba(0, 0, 0, 0.08),
-      0 0 0 1px var(--shadow-color);
+      0 0 40px var(--accent-glow),
+      0 8px 32px var(--shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
   }
 
   .diagram-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 1.25rem 1.75rem;
     background: var(--header-bg);
-    border-bottom: 2px solid var(--diagram-border);
+    border-bottom: 1px solid var(--diagram-border);
+    gap: 2rem;
   }
 
   .diagram-title {
     margin: 0;
-    font-size: 1.375rem;
-    font-weight: 800;
+    font-size: 1.5rem;
+    font-weight: 400;
     color: var(--text-primary);
-    letter-spacing: -0.02em;
+    letter-spacing: 0.02em;
+    font-family: 'Crimson Text', serif;
   }
 
   .controls {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.75rem;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .control-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    border: 2px solid var(--diagram-border);
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid var(--diagram-border);
     border-radius: 8px;
-    background: white;
+    background: rgba(26, 166, 154, 0.1);
     color: var(--text-secondary);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
   }
 
   .control-btn:hover:not(:disabled) {
+    background: rgba(26, 166, 154, 0.2);
     border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-1px);
+    color: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--accent-glow);
+  }
+
+  .control-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 
   .control-btn:disabled {
-    opacity: 0.3;
+    opacity: 0.35;
     cursor: not-allowed;
   }
 
   .control-btn.primary {
-    background: var(--accent);
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
     border-color: var(--accent);
-    color: white;
+    color: #0a0e14;
+    font-weight: 600;
   }
 
   .control-btn.primary:hover {
-    background: var(--accent-dark);
-    border-color: var(--accent-dark);
+    background: linear-gradient(135deg, var(--accent-light), var(--accent));
+    box-shadow: 0 6px 16px var(--accent-glow);
   }
 
   .step-indicator {
     font-family: 'Fira Code', monospace;
-    font-size: 0.875rem;
-    font-weight: 500;
+    font-size: 0.8125rem;
+    font-weight: 600;
     color: var(--text-secondary);
-    padding: 0 0.5rem;
+    padding: 0.375rem 0.75rem;
+    background: rgba(26, 166, 154, 0.08);
+    border-radius: 6px;
+    border: 1px solid var(--diagram-border);
   }
 
   .diagram-svg {
     width: 100%;
     height: var(--diagram-height);
     display: block;
+    background: rgba(0, 0, 0, 0.1);
   }
 
   .node {
-    transition: transform 0.2s ease;
+    transition: all 0.3s ease;
   }
 
   .node.draggable {
-    cursor: move;
+    cursor: grab;
+  }
+
+  .node.draggable:active {
+    cursor: grabbing;
   }
 
   .node:hover .node-shape {
-    filter: brightness(1.1);
+    filter: brightness(1.15) drop-shadow(0 0 8px var(--accent-glow));
   }
 
   .node.highlighted .node-shape {
-    filter: url(#glow) brightness(1.15);
-    stroke: var(--accent-light);
-    stroke-width: 3;
-    animation: pulse 1s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px var(--accent)) brightness(1.2);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .node-shape {
@@ -494,53 +520,63 @@
   }
 
   .node-label {
-    font-family: 'Darker Grotesque', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    fill: white;
+    font-family: 'Fira Code', monospace;
+    font-size: 22px;
+    font-weight: 400;
+    fill: var(--text-primary);
     pointer-events: none;
     user-select: none;
+    letter-spacing: 0.02em;
   }
 
   .connection-label {
     font-family: 'Fira Code', monospace;
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 400;
     fill: var(--text-secondary);
     pointer-events: none;
+    letter-spacing: 0.05em;
+  }
+
+  .connection {
+    transition: all 0.3s ease;
   }
 
   .connection.active path {
-    stroke: var(--accent);
-    stroke-width: 3;
+    stroke: var(--accent-light);
+    stroke-width: 3.5;
+    filter: drop-shadow(0 0 8px var(--accent-glow));
   }
 
   .connection.active polygon {
-    fill: var(--accent);
+    fill: var(--accent-light);
+    filter: drop-shadow(0 0 8px var(--accent-glow));
   }
 
   .animated-path {
-    stroke-dasharray: 8;
-    animation: dash 1s linear infinite;
+    stroke-dasharray: 10;
+    animation: dash 1.5s linear infinite;
   }
 
   .animated-arrow {
-    animation: pulse 1s ease-in-out infinite;
+    animation: pulse 1.2s ease-in-out infinite;
   }
 
   .step-description {
-    padding: 1rem 1.5rem;
-    background: white;
-    border-top: 2px solid var(--diagram-border);
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.6;
+    padding: 1.25rem 1.75rem;
+    background: rgba(13, 26, 24, 0.6);
+    border-top: 1px solid var(--diagram-border);
+    font-size: 1.0625rem;
+    font-weight: 400;
+    line-height: 1.7;
     color: var(--text-primary);
+    font-family: 'Crimson Text', serif;
+    letter-spacing: 0.01em;
   }
 
   @keyframes dash {
     to {
-      stroke-dashoffset: -16;
+      stroke-dashoffset: -20;
     }
   }
 
@@ -562,6 +598,29 @@
 
     .controls {
       justify-content: center;
+    }
+
+    .diagram-title {
+      font-size: 1.25rem;
+      text-align: center;
+    }
+
+    .step-description {
+      font-size: 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .node,
+    .connection,
+    .control-btn {
+      transition: none;
+    }
+
+    .animated-path,
+    .animated-arrow,
+    .node.highlighted .node-shape {
+      animation: none !important;
     }
   }
 </style>
