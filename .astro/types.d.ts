@@ -213,6 +213,13 @@ declare module 'astro:content' {
   collection: "blog-posts";
   data: InferEntrySchema<"blog-posts">
 } & { render(): Render[".md"] };
+"test-post.mdx": {
+	id: "test-post.mdx";
+  slug: "test-post";
+  body: string;
+  collection: "blog-posts";
+  data: InferEntrySchema<"blog-posts">
+} & { render(): Render[".mdx"] };
 "the-role-of-visual-thinking-in-developer-advocacy.md": {
 	id: "the-role-of-visual-thinking-in-developer-advocacy.md";
   slug: "the-role-of-visual-thinking-in-developer-advocacy";

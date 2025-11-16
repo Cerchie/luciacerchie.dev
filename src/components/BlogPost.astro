@@ -1,0 +1,14 @@
+---
+const { title, description, publishDate, Content } = Astro.props;
+---
+
+<article>
+  <header>
+    <h1>{title}</h1>
+    <p>{description}</p>
+    <time datetime={publishDate}>{publishDate}</time>
+  </header>
+  <section>
+    <Content />
+  </section>
+</article>
