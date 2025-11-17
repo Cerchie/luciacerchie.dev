@@ -281,7 +281,7 @@ input[name='theme-toggle'] {
     color:#2c5131;;
     font-weight: 100;
   }
-
+/* TODO remove important */
   :global(.content p) {
     font-size: 1.5rem !important;
     margin-bottom: 1.2em;
