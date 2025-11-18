@@ -47,4 +47,10 @@ const { title, description, permalink, current } = Astro.props;
     display: flex;
     flex-direction: column;
   }
+
+  @media (max-width: 480px) {
+    main {
+      padding: 0.5em 0.125em;
+    }
+  }
 </style>
