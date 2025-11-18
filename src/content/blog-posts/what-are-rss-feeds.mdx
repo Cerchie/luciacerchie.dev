@@ -7,7 +7,7 @@ description: "Learn about how RSS feeds work"
 import InteractiveDiagramSystem from '../../components/InteractiveDiagramSystem.svelte';
 import Snippet from '../../components/Snippet.svelte';
 
-Around 2017 I logged out of Instagram and Facebook for good, quieting the dull roar of the body image crisis they caused. I say “logged out”, not “deleted my accounts” because the deletion process was so convoluted I didn’t bother. Terrible sad sad UX. I got a Twitter account in 2020, and in fact got my first two jobs in tech via Twitter referrals, but it got way less fun after the Musk takeover, so I quietly slid away from that platform too.
+Around 2017 I logged out of Instagram and Facebook for good, quieting the dull roar of the body image crisis they caused. I say “logged out”, not “deleted my accounts” because the deletion process was so convoluted I didn’t bother. Terrible sad sad UX. I got a Twitter account in 2020, and in fact got my first two jobs in tech via Twitter referrals, but it got way less fun after it turned into X, so I quietly slid away from that platform too.
 
 I’m still [actively on LinkedIn](https://www.linkedin.com/in/luciacerchie/) nowadays, mostly as a way to request coffee chats with people in the engineering and design spaces. 
 I’m sure my personal experience resonates with that of many others as social media morphs and fractionates and many of us dizzily wander out of the haze of scrolling. 
@@ -161,11 +161,11 @@ Here's how I set it up: I created some models to represent the feed items in a l
 
 - For my case when I’m a single polling for new blogs once a day, following high-quality bloggers who blog max 2x a week, I don’t really need the rate limiter ChatGPT created for me. But it’s something to think about if I were to deploy this at scale to avoid creating issues for RSS servers. Again, for me the fetch and write concurrency doesn’t matter so much, but it would be something to consider otherwise.
 
-- The links and info have to be stored somewhere, static db like pg should be fine, but in my vibe-coding session I didn't even get to consider things like pagination.
+- The links and info have to be stored somewhere, and a static database like PostgreSQL should be fine, but in my vibe-coding session I didn't even get to consider things like pagination.
 
 ## Conclusion
 
-That's pretty much all I know about RSS readers at this point. 
+That's pretty much all I know about RSS readers at this point. It will be interesting to see where they go in the next few years. We're in an odd era of the internet: Substack social media posts proclaiming the benefits of leaving social media, AI-generated comments on AI-generated LinkedIn posts, the dominance of short form video. There's a lot of irony and fatigue. My hope is that RSS readers can offer a sort of antidote to this and bring you directly in touch with your favorite authors.
 
 So here's what I want to know from you:
 
