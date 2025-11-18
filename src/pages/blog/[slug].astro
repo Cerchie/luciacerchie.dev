@@ -83,6 +83,7 @@ const permalink = `${Astro.site.href}blog/${slug}`;
     margin-bottom: 1.5em;
   }
 
+
   :global(.content li) {
     font-size: 2.25rem;
   }
@@ -107,5 +108,39 @@ const permalink = `${Astro.site.href}blog/${slug}`;
     padding: 0;
     min-width: 90%;
   }
+
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2rem;
+    }
+
+    :global(h1) {
+      font-size: 2rem;
+    }
+
+    :global(.content h2) {
+      font-size: 2rem;
+    }
+
+    :global(.content h3) {
+      font-size: 1.2rem;
+      font-weight: bolder;
+    }
+    :global(.content li) {
+      font-size: 1.2rem;
+    }
+
+    :global(.content a) {
+      font-size: 1.2rem;
+    }
+
+    :global(.content code) {
+      font-size: 1.2rem;
+    }
+    :global(.content p) {
+      font-size: 1.2rem;
+    }
+  }
+
 
 </style>

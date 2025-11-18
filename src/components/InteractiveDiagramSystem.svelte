@@ -610,6 +610,16 @@
     }
   }
 
+  @media (max-width: 480px) {
+    .diagram-wrapper {
+      --diagram-height: 250px;
+    }
+
+    .diagram-svg {
+      height: 250px;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .node,
     .connection,

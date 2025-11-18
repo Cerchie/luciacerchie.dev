@@ -276,10 +276,10 @@ input[name='theme-toggle'] {
   }
 
   body {
-    font-size: 10px;
     padding: 1rem;
     margin: 0;
     overflow-x: hidden;
+    font-size: 14px;
   }
 
   main {
@@ -290,7 +290,7 @@ input[name='theme-toggle'] {
   p,
   ul,
   ol {
-    font-size: 1.2rem;
+    font-size: 0.75rem;
     margin: .5em 0;
     color:#2c5131;;
     font-weight: 100;
@@ -312,32 +312,26 @@ input[name='theme-toggle'] {
     padding: .25rem;
   }
 
-  :global(.content p) {
-    font-size: 1.5rem ;
-    margin-bottom: 1.2em;
-  }
-
-  :global(.content h2) {
-    font-size: 2rem ;
-    margin-top: 1.2em;
-    margin-bottom: 0.4em;
-  }
-
-  :global(.content h3) {
-    font-size: 1.5rem ;
-    margin-top: 1em;
-    margin-bottom: 0.4em;
-  }
-
-  :global(.content li) {
-    font-size: 1.5rem ;
-  }
-
-  :global(.content a) {
-    font-size: 1.5rem ;
-  }
-
   header h1 {
-    font-size: 3rem ;
+    font-size: 1rem ;
+  }
+
+  :global(.diagram-wrapper) {
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem 0;
+    padding: 0;
+  }
+
+  :global(.diagram-container) {
+    max-width: 100%;
+  }
+
+  :global(.diagram-svg) {
+    max-width: 100%;
+  }
+
+  :global(svg[style*="height"]) {
+    height: 250px !important;
   }
 }

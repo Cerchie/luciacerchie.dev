@@ -234,4 +234,45 @@
       font-size: 0.75rem;
     }
   }
+
+  @media (max-width: 480px) {
+    .code-block {
+      font-size: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .code-pre {
+      padding: 0.5rem 0.5rem;
+      margin: 1rem 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      max-width: 100%;
+    }
+
+    .code-line {
+      padding: 0 0.5rem;
+    }
+
+    .line-number {
+      display: none;
+    }
+
+    .snippet-header {
+      padding: 0.5rem 0.75rem;
+    }
+
+    .header-left {
+      gap: 0.5rem;
+    }
+
+    .lang-badge {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.65rem;
+    }
+
+    .copy-btn {
+      padding: 0.375rem 0.625rem;
+      font-size: 0.7rem;
+    }
+  }
 </style>
