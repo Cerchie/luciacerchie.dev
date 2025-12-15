@@ -4,6 +4,12 @@ publishDate: "2025-10-14"
 description: "How to know when you're generating slop, and how to stop"
 ---
 
+AI slop is rampant these days, infecting our internet experience, as 
+well as degrading our codebases. And while I've seen a lot of lamenting, 
+I'd like to see more guides on how to avoid it. So, I wrote my own! It's limited to coding,
+because while I will run a blog post through an AI review once I'm done, my advice for writing in 
+general is: don't use AI. Let's dive in. 
+
 Oxide's [RFD 576](https://rfd.shared.oxide.computer/rfd/0576) states:
 
 > [...] human judgement remains firmly in the loop: 
@@ -20,7 +26,7 @@ slop.
 
 In this blog post, I'll outline how to tell when you're generating slop, and give some 
 foundational tips on stopping and developing a habit of ownership. Self-monitoring is key.
-This means using emotional intelligence skills. You need to recognize when you are bored,
+This means using emotional intelligence skills. There are four emotional "horses of the apocalypse". You need to recognize when you are bored,
 confused, frustrated, or fatigued. I wrote this blog post thinking about folks who 
 are new to this type of introspection, or who may deal with some level of [alexithymia](https://en.wikipedia.org/wiki/Alexithymia), so I'll
 describe what these emotions feel like at the beginning of each section, but I'll also give 
@@ -88,7 +94,7 @@ productivity slowdown. This type of malaise sucks.
 
 The good news is, using AI tooling doesn't have to be like this. There are proactive actions you
 can take to avoid the 4 horses of the Slopocalypse. If you've been reading this blog and feeling 
-the prickle of identification with these emotions, or some embarassment in the pit of your stomach,
+the prickle of identification with these emotions, or some embarrassment in the pit of your stomach,
 there is help. 
 
 I'm splitting my advice into two sections: the first section includes age-old advice that applied before 
@@ -96,19 +102,21 @@ the age of AI tooling, but, I maintain it has deeper impact the way our work has
 years. The second part are technical practices you can begin to use as guardrails from generating
 poor code with AI tooling. 
 
-### Part One: Solid Old advice
+## Part One: Solid Old advice
 
-1. Take breaks. I put this at the top because it's the foundation for the rest of the preventatives. 
+### 1. Take breaks. 
+I put this at the top because it's the foundation for the rest of the preventatives. 
 Touch grass, frequently. I forget what self-help author said this, but "A phone is not a break". 
 Get up, use the bathroom, empty the dishwasher in your kitchen or the break room. Make some tea or coffee.
-If you find yourself in deep focus for a few hours, that's fantastic, but on days where that's not 
+If you find yourself in deep focus for a few hours, that's fantastic, but on days when that's not 
 happening I like using the old-fashioned pomodoro method. 25 minutes on, 5 minutes off, a 15 minute
 break every 4 or so hours. [This website](https://pomofocus.io/) is great tab to have open when you're
 practicing pomodoro. Your brain is in a body, and to keep your brain fresh an in control of 
 your toolchain at work, you need breaks. Be disciplined about this. 
 
-2. Use an old-fashioned notebook. This will keep your brain online and 
-energized in a way that it won't be if your hands are typing, as typing and handwriting recruit
+### 2. Use an old-fashioned notebook. 
+This will keep your brain online and 
+energized in a way typing won't keep it, as typing and handwriting recruit
 different areas of the brain. Thanks, evolution! For example, [handwriting involves the cuneus/
 precuneus](https://pmc.ncbi.nlm.nih.gov/articles/PMC11943480/#sec3-life-15-00345), needed 
 for visual processing and attention, and these areas of the brain are not involved in typing. 
@@ -118,34 +126,39 @@ I used a notebook to write the first draft of this blog post, in fact. I couldn'
 until the second semester of my senior year in college so I wrote the entire first draft of my thesis
 on paper and you know what? It was probably better written that way. 
 
-3. Pair early and often. I'm not defining "pairing" formally, I just mean 2 people in front of 1 screen.
+### 3. Pair early and often. 
+I'm not defining "pairing" formally, I just mean 2 people in front of 1 screen.
 I also don't care whether it's remote or in-office, but pairing 1-2x per day is how problems are solved
 and engineering team culture is forged. If you're new to a team, don't be afraid to use AI tooling 
 in front of a coworker, but do ask them how it is used on the team.
 
 Speaking of how AI is used on teams, time to get to the technical stuff. 
 
-### Part Two: Tips For Responsible AI Copilot Use 
+## Part Two: Tips For Responsible AI Copilot Use 
 
-1. Be careful with AI usage when you're getting used to a new codebase. Take good first issues and do
+### 1. Be careful with AI usage when you're getting used to a new codebase. 
+Take good first issues and do
 them manually so you can understand the codebase well enough to correct AI when the time comes. Claude 
 Code has a built in [learning output style](https://code.claude.com/docs/en/output-styles) you can use 
 to have it teach you by stepping back and having you code certain pieces by hand. 
 
-2. Keep your PRs short. Have empathy for your reviewer who is carefully reading it line by line.
+### 2. Keep your PRs short. 
+Have empathy for your reviewer who is carefully reading it line by line.
 Before adding a new feature, consider: can this be broken up into smaller steps, smaller diffs?
 Is there any refactoring (DRY, new utility methods, etc) that can be done before the real meat of the
 feature is added? 
 
-3. Once you're on a new team, you are responsible for (and, as a new person, in a good time to point out)
-improvements to the on-call runbook, or CI running smoothly. You are also responsible for making
+### 3. Once you're on a new team, you are responsible for (and, as a new person, in a good time to point out)
+improvements to the on-call runbook, or CI running smoothly. 
+You are also responsible for making
 adjustments to AI tooling. This means that if you get feedback from a coworker regarding poor code
 style in a PR, you take that feedback to heart but you can also take the opportunity to add this 
 to `AGENTS.md` or `copilot-instructions.md` so that the AI copilot is less likely to generate poor
 code in the future. You also need to understand common workflows, and volunteer to add them to `SKILLS.md`
 or create custom agents. 
 
-4. Keep a PR checklist. Make sure you've self-reviewed for obvious blunders, like wet code (opposite
+### 4. Keep a PR checklist. 
+Make sure you've self-reviewed for obvious blunders, like wet code (opposite
 of DRY right?), comments left in, files that shouldn't be committed. Check that your tests are 
 robust, and that you're not creating new methods when utility methods pre-exist. 
 
@@ -153,5 +166,17 @@ robust, and that you're not creating new methods when utility methods pre-exist.
 ## Conclusion
 
 These are the most helpful antidotes to slop that I've come up with. I'm sure more is out there, and I'd love
-to hear what you have to say. Drop me a line [on LinkedIn](https://www.linkedin.com/in/luciacerchie/). Stay emotionally intelligent, use your EQ
-to self-monitor your work, and you'll be using AI responsibly in no time :) 
+to hear what you have to say. Drop me a line [on LinkedIn](https://www.linkedin.com/in/luciacerchie/). 
+Stay emotionally intelligent, use your EQ to self-monitor your work, and you'll be using AI responsibly soon
+enough. 
+
+I like to say AI tooling is the new "Microsoft Word" of resumes. You've got to have it, but the distance
+between power users and those who can just save a doc, or open a chat, is vast. Much of that difference
+will lie with you and your determination to master clean code style, team communication, and AI tooling.  
+
+
+### Resources: 
+- [Oxide RFDs](https://rfd.shared.oxide.computer/)
+- Claude Code [docs](https://code.claude.com/docs/en/overview)
+- GitHub Copilot [docs](https://docs.github.com/en/copilot)
+- Cursor [docs](https://cursor.com/en-US/docs)
